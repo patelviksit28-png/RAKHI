@@ -1,0 +1,1931 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>For My Sister ❤️ | Happy Raksha Bandhan</title>
+
+    <style>
+        /* =========================================================
+   RAKSHA BANDHAN WEBSITE — VERSION 2
+   Everything is contained in this one file.
+   ========================================================= */
+
+        @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+        :root {
+            --pink: #ff5c8a;
+            --pink2: #ff8fb1;
+            --purple: #9b5de5;
+            --deep: #160b27;
+            --cream: #fff8f3;
+            --gold: #ffd166;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--deep);
+            color: white;
+            overflow: hidden;
+        }
+
+        /* ================= BACKGROUND ================= */
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            z-index: -5;
+
+            background:
+                radial-gradient(circle at 15% 20%, rgba(255, 92, 138, .25), transparent 30%),
+                radial-gradient(circle at 85% 70%, rgba(155, 93, 229, .25), transparent 30%),
+                linear-gradient(135deg, #12091f, #24103c, #160b27);
+
+            animation: bgMove 12s ease-in-out infinite alternate;
+        }
+
+        @keyframes bgMove {
+            from {
+                transform: scale(1);
+            }
+
+            to {
+                transform: scale(1.08);
+            }
+        }
+
+        /* ================= PAGE SYSTEM ================= */
+
+        .page {
+            position: absolute;
+            inset: 0;
+
+            width: 100%;
+            min-height: 100vh;
+
+            padding: 70px 8% 40px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+
+            opacity: 0;
+            pointer-events: none;
+
+            transform: translateX(40px) scale(.98);
+
+            transition:
+                opacity .7s ease,
+                transform .7s ease;
+
+            overflow-y: auto;
+        }
+
+        .page.active {
+            opacity: 1;
+            pointer-events: auto;
+            transform: translateX(0) scale(1);
+        }
+
+        .page::-webkit-scrollbar {
+            width: 5px;
+        }
+
+        .page::-webkit-scrollbar-thumb {
+            background: var(--pink);
+            border-radius: 20px;
+        }
+
+        /* ================= NAVIGATION ================= */
+
+        .nav {
+            position: fixed;
+            top: 22px;
+            left: 50%;
+            transform: translateX(-50%);
+
+            z-index: 100;
+
+            display: flex;
+            gap: 8px;
+
+            padding: 9px;
+
+            border: 1px solid rgba(255, 255, 255, .15);
+            background: rgba(20, 10, 35, .55);
+
+            backdrop-filter: blur(18px);
+
+            border-radius: 50px;
+        }
+
+        .nav button {
+            border: none;
+            background: transparent;
+            color: white;
+
+            width: 32px;
+            height: 32px;
+
+            border-radius: 50%;
+
+            cursor: pointer;
+
+            transition: .3s;
+        }
+
+        .nav button:hover,
+        .nav button.active {
+            background: var(--pink);
+            box-shadow: 0 0 20px rgba(255, 92, 138, .5);
+        }
+
+        /* ================= TYPOGRAPHY ================= */
+
+        .kicker {
+            color: var(--pink2);
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            font-size: 12px;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(45px, 8vw, 100px);
+            line-height: 1;
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(35px, 5vw, 65px);
+            margin-bottom: 15px;
+        }
+
+        .highlight {
+            color: var(--pink2);
+        }
+
+        .script {
+            font-family: 'Caveat', cursive;
+            font-size: 32px;
+            color: #ffd9e5;
+        }
+
+        .subtitle {
+            max-width: 700px;
+            color: rgba(255, 255, 255, .7);
+            line-height: 1.8;
+            margin: 20px auto;
+        }
+
+        /* ================= BUTTONS ================= */
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+
+            border: none;
+
+            padding: 14px 25px;
+
+            border-radius: 50px;
+
+            color: white;
+
+            background: linear-gradient(135deg, var(--pink), var(--purple));
+
+            box-shadow: 0 10px 35px rgba(255, 92, 138, .25);
+
+            cursor: pointer;
+
+            font-family: 'Poppins';
+
+            transition: .3s;
+
+            margin: 7px;
+        }
+
+        .btn:hover {
+            transform: translateY(-4px) scale(1.03);
+            box-shadow: 0 15px 40px rgba(255, 92, 138, .4);
+        }
+
+        .btn.secondary {
+            background: rgba(255, 255, 255, .08);
+            border: 1px solid rgba(255, 255, 255, .15);
+        }
+
+        /* ================= MUSIC ================= */
+
+        .music {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+
+            z-index: 200;
+
+            width: 48px;
+            height: 48px;
+
+            border-radius: 50%;
+
+            border: 1px solid rgba(255, 255, 255, .2);
+
+            background: rgba(20, 10, 35, .65);
+
+            backdrop-filter: blur(15px);
+
+            color: white;
+
+            cursor: pointer;
+
+            font-size: 20px;
+
+            transition: .3s;
+        }
+
+        .music.playing {
+            animation: musicPulse 1.5s infinite;
+        }
+
+        @keyframes musicPulse {
+            50% {
+                box-shadow: 0 0 0 12px rgba(255, 92, 138, 0);
+            }
+
+            0% {
+                box-shadow: 0 0 0 0 rgba(255, 92, 138, .4);
+            }
+        }
+
+        /* ================= HERO ================= */
+
+        .hero-rakhi {
+            position: relative;
+
+            width: 190px;
+            height: 190px;
+
+            margin-bottom: 25px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .rakhi-circle {
+            width: 130px;
+            height: 130px;
+
+            border-radius: 50%;
+
+            background:
+                radial-gradient(circle, #ffd166 0 12%, #ff7a9c 13% 25%, #9b5de5 26% 40%, #ff5c8a 41% 55%, transparent 56%);
+
+            box-shadow:
+                0 0 25px #ff5c8a,
+                0 0 70px rgba(255, 92, 138, .4);
+
+            animation: rakhiSpin 8s linear infinite;
+        }
+
+        .rakhi-thread {
+            position: absolute;
+
+            width: 270px;
+            height: 18px;
+
+            border-top: 5px solid #ff5c8a;
+            border-bottom: 5px solid #ffd166;
+
+            transform: rotate(45deg);
+
+            opacity: .7;
+        }
+
+        @keyframes rakhiSpin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* ================= GLASS CARD ================= */
+
+        .card {
+            width: min(900px, 100%);
+
+            padding: 35px;
+
+            background: rgba(255, 255, 255, .07);
+
+            border: 1px solid rgba(255, 255, 255, .13);
+
+            backdrop-filter: blur(20px);
+
+            border-radius: 30px;
+
+            box-shadow: 0 20px 80px rgba(0, 0, 0, .25);
+        }
+
+        /* ================= SECRET BOX ================= */
+
+        .secret-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .secret-input {
+            width: min(350px, 90%);
+
+            padding: 15px 20px;
+
+            border-radius: 50px;
+
+            border: 1px solid rgba(255, 255, 255, .2);
+
+            outline: none;
+
+            background: rgba(255, 255, 255, .08);
+
+            color: white;
+
+            text-align: center;
+
+            font-size: 16px;
+        }
+
+        .secret-input::placeholder {
+            color: rgba(255, 255, 255, .5);
+        }
+
+        /* ================= GALLERY ================= */
+
+        .gallery {
+            width: min(1000px, 100%);
+
+            display: grid;
+
+            grid-template-columns: repeat(4, 1fr);
+
+            gap: 14px;
+
+            margin: 25px 0;
+        }
+
+        .photo {
+            height: 180px;
+
+            overflow: hidden;
+
+            border-radius: 20px;
+
+            border: 1px solid rgba(255, 255, 255, .12);
+
+            cursor: pointer;
+
+            position: relative;
+
+            transition: .4s;
+        }
+
+        .photo:nth-child(2),
+        .photo:nth-child(5) {
+            transform: translateY(20px);
+        }
+
+        .photo:hover {
+            transform: scale(1.04) rotate(1deg);
+            box-shadow: 0 15px 40px rgba(255, 92, 138, .25);
+        }
+
+        .photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+
+            transition: .5s;
+        }
+
+        .photo:hover img {
+            transform: scale(1.12);
+        }
+
+        /* ================= LIGHTBOX ================= */
+
+        .lightbox {
+            position: fixed;
+            inset: 0;
+
+            z-index: 500;
+
+            display: none;
+
+            justify-content: center;
+            align-items: center;
+
+            background: rgba(0, 0, 0, .9);
+
+            padding: 30px;
+        }
+
+        .lightbox.show {
+            display: flex;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 85%;
+
+            border-radius: 20px;
+
+            box-shadow: 0 0 80px rgba(255, 92, 138, .3);
+        }
+
+        .close-lightbox {
+            position: absolute;
+
+            top: 25px;
+            right: 30px;
+
+            background: none;
+            border: none;
+
+            color: white;
+
+            font-size: 35px;
+
+            cursor: pointer;
+        }
+
+        /* ================= TIMELINE ================= */
+
+        .timeline {
+            width: min(850px, 100%);
+
+            position: relative;
+
+            margin: 20px auto;
+        }
+
+        .timeline::before {
+            content: "";
+
+            position: absolute;
+
+            left: 50%;
+
+            top: 0;
+            bottom: 0;
+
+            width: 2px;
+
+            background: linear-gradient(transparent,
+                    var(--pink),
+                    var(--purple),
+                    transparent);
+        }
+
+        .event {
+            width: 50%;
+
+            padding: 15px 35px;
+
+            text-align: right;
+        }
+
+        .event:nth-child(even) {
+            margin-left: 50%;
+            text-align: left;
+        }
+
+        .event-card {
+            padding: 20px;
+
+            background: rgba(255, 255, 255, .07);
+
+            border: 1px solid rgba(255, 255, 255, .1);
+
+            border-radius: 20px;
+        }
+
+        .year {
+            color: var(--gold);
+            font-weight: 600;
+        }
+
+        /* ================= REASONS ================= */
+
+        .reasons {
+            width: min(950px, 100%);
+
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 18px;
+
+            margin-top: 25px;
+        }
+
+        .reason {
+            padding: 25px;
+
+            border-radius: 25px;
+
+            background: rgba(255, 255, 255, .07);
+
+            border: 1px solid rgba(255, 255, 255, .1);
+
+            transition: .3s;
+        }
+
+        .reason:hover {
+            transform: translateY(-8px);
+
+            background: rgba(255, 92, 138, .1);
+        }
+
+        .reason-icon {
+            font-size: 35px;
+
+            margin-bottom: 12px;
+        }
+
+        /* ================= PROMISES ================= */
+
+        .promise {
+            display: flex;
+
+            align-items: center;
+
+            gap: 15px;
+
+            width: min(700px, 100%);
+
+            padding: 17px 20px;
+
+            margin: 7px;
+
+            text-align: left;
+
+            border-radius: 18px;
+
+            background: rgba(255, 255, 255, .06);
+
+            border: 1px solid rgba(255, 255, 255, .1);
+
+            transition: .3s;
+        }
+
+        .promise:hover {
+            transform: translateX(8px);
+
+            border-color: rgba(255, 92, 138, .4);
+        }
+
+        .promise span {
+            font-size: 25px;
+        }
+
+        /* ================= LETTER ================= */
+
+        .letter {
+            max-width: 750px;
+
+            text-align: left;
+
+            padding: 40px;
+
+            background:
+                linear-gradient(rgba(255, 255, 255, .94),
+                    rgba(255, 248, 243, .94));
+
+            color: #382333;
+
+            border-radius: 5px 25px 5px 25px;
+
+            box-shadow: 0 25px 80px rgba(0, 0, 0, .3);
+
+            position: relative;
+        }
+
+        .letter::before {
+            content: "";
+
+            position: absolute;
+
+            inset: 12px;
+
+            border: 1px dashed rgba(255, 92, 138, .35);
+
+            pointer-events: none;
+        }
+
+        .letter p {
+            line-height: 1.9;
+
+            margin-bottom: 18px;
+        }
+
+        .signature {
+            font-family: 'Caveat', cursive;
+
+            font-size: 35px;
+
+            color: #d94875;
+        }
+
+        /* ================= SURPRISE ================= */
+
+        .gift {
+            font-size: 100px;
+
+            cursor: pointer;
+
+            display: inline-block;
+
+            animation: giftFloat 2s ease-in-out infinite;
+
+            filter: drop-shadow(0 15px 20px rgba(255, 92, 138, .3));
+        }
+
+        @keyframes giftFloat {
+            50% {
+                transform: translateY(-15px) rotate(3deg);
+            }
+        }
+
+        .surprise-message {
+            max-width: 700px;
+
+            display: none;
+
+            margin-top: 25px;
+
+            animation: reveal .8s ease forwards;
+        }
+
+        .surprise-message.show {
+            display: block;
+        }
+
+        @keyframes reveal {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: none;
+            }
+        }
+
+        /* ================= FLOATING HEARTS ================= */
+
+        .heart {
+            position: fixed;
+
+            pointer-events: none;
+
+            z-index: -1;
+
+            animation: heartFloat linear forwards;
+
+            opacity: .5;
+        }
+
+        @keyframes heartFloat {
+            from {
+                transform: translateY(100vh) scale(.5) rotate(0);
+                opacity: 0;
+            }
+
+            20% {
+                opacity: .6;
+            }
+
+            to {
+                transform: translateY(-20vh) scale(1.3) rotate(180deg);
+                opacity: 0;
+            }
+        }
+
+        /* ================= CONFETTI ================= */
+
+        .confetti {
+            position: fixed;
+
+            top: -20px;
+
+            width: 9px;
+            height: 15px;
+
+            z-index: 1000;
+
+            animation: confettiFall linear forwards;
+        }
+
+        @keyframes confettiFall {
+            to {
+                transform: translateY(110vh) rotate(720deg);
+            }
+        }
+
+        /* ================= RESPONSIVE ================= */
+
+        @media(max-width:800px) {
+
+            .nav {
+                max-width: 95%;
+                overflow-x: auto;
+            }
+
+            .gallery {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .photo {
+                height: 150px;
+            }
+
+            .reasons {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline::before {
+                left: 15px;
+            }
+
+            .event,
+            .event:nth-child(even) {
+                width: 100%;
+                margin-left: 0;
+
+                padding-left: 45px;
+                text-align: left;
+            }
+
+            .letter {
+                padding: 25px;
+            }
+
+            .page {
+                padding: 80px 20px 30px;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+     NAVIGATION
+===================================================== -->
+
+    <div class="nav">
+
+        <button onclick="goTo(0)" class="active">🏠</button>
+        <button onclick="goTo(1)">🔐</button>
+        <button onclick="goTo(2)">📖</button>
+        <button onclick="goTo(3)">📸</button>
+        <button onclick="goTo(4)">🕰️</button>
+        <button onclick="goTo(5)">💖</button>
+        <button onclick="goTo(6)">🤝</button>
+        <button onclick="goTo(7)">💌</button>
+        <button onclick="goTo(8)">🎁</button>
+
+    </div>
+
+
+    <!-- =====================================================
+     MUSIC
+===================================================== -->
+
+    <audio id="music" loop>
+
+        <!-- CHANGE YOUR MUSIC FILE HERE -->
+
+        <source src="rakhi-song.mp3.mp3" type="audio/mpeg">
+
+    </audio>
+
+    <button class="music" id="musicButton" onclick="toggleMusic()">
+        🎵
+    </button>
+
+
+    <!-- =====================================================
+     PAGE 1 — CINEMATIC INTRO
+===================================================== -->
+
+    <section class="page active" id="page0">
+
+        <div class="hero-rakhi">
+
+            <div class="rakhi-thread"></div>
+
+            <div class="rakhi-circle"></div>
+
+        </div>
+
+        <div class="kicker">
+            A little surprise for someone very special
+        </div>
+
+        <h1>
+            Happy Raksha<br>
+            <span class="highlight">Bandhan ❤️</span>
+        </h1>
+
+        <p class="script">
+            To the most annoying person I could never live without...
+        </p>
+
+        <p class="subtitle">
+            This isn't just a website.
+            It's a tiny collection of memories, feelings,
+            promises and all the things I don't say enough.
+        </p>
+
+        <button class="btn" onclick="goTo(1)">
+            Begin the surprise ✨
+        </button>
+
+    </section>
+
+
+    <!-- =====================================================
+     PAGE 2 — SECRET ENTRY
+===================================================== -->
+
+    <section class="page" id="page1">
+
+        <div class="kicker">
+            Before you continue...
+        </div>
+
+        <h2>
+            Are you really <span class="highlight">my sister?</span> 👀
+        </h2>
+
+        <div class="card secret-box">
+
+            <p class="subtitle">
+                There is a secret word only you should know.
+                <br>
+                Hint: what does your brother call you when he's annoyed? 😂
+            </p>
+
+            <input id="secretInput" class="secret-input" placeholder="Enter secret word...">
+
+            <button class="btn" onclick="unlock()">
+                Unlock ❤️
+            </button>
+
+            <p id="secretResult"></p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+     PAGE 3 — OUR STORY
+===================================================== -->
+
+    <section class="page" id="page2">
+
+        <div class="kicker">
+            Chapter One
+        </div>
+
+        <h2>
+            How it all <span class="highlight">started</span> 💜
+        </h2>
+
+        <div class="card">
+
+            <p class="subtitle" id="typeText">
+
+
+            </p>
+
+            <p class="script">
+                From playing truth & dare in 8th to
+                becoming my best sister and friend 
+                and BTW httt ree chudaill!!
+                  bhootniii👻
+                 padhh bhi liya kar gadhiii
+
+                
+            </p>
+
+            <button class="btn" onclick="goTo(3)">
+                Show me the memories 📸
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+     PAGE 4 — PHOTO GALLERY
+===================================================== -->
+
+    <section class="page" id="page3">
+
+        <div class="kicker">
+            Chapter Two
+        </div>
+
+        <h2>
+            Your little <span class="highlight">museum</span> 📸
+        </h2>
+
+        <p class="subtitle">
+            Every picture has a story.
+            Some are beautiful.
+            Some are embarrassing.
+            Most are both. 😂
+        </p>
+
+
+        <div class="gallery">
+
+            <div class="photo">
+                <img src="photo1.jpg.jpg" alt="Memory 1">
+            </div>
+
+            <div class="photo">
+                <img src="photo2.jpg.jpg" alt="Memory 2">
+            </div>
+
+            <div class="photo">
+                <img src="photo3.jpg.jpg" alt="Memory 3">
+            </div>
+
+            <div class="photo">
+                <img src="photo4.jpg.jpg" alt="Memory 4">
+            </div>
+
+            <div class="photo">
+                <img src="photo5.jpg.jpg" alt="Memory 5">
+            </div>
+
+            <div class="photo">
+                <img src="photo6.jpg.jpg" alt="Memory 6">
+            </div>
+
+            <div class="photo">
+                <img src="photo7.jpg.jpg" alt="Memory 7">
+            </div>
+
+            <div class="photo">
+                <img src="photo8.jpg.jpg" alt="Memory 8">
+            </div>
+
+        </div>
+
+        <button class="btn" onclick="goTo(4)">
+            Our timeline 🕰️
+        </button>
+
+    </section>
+
+
+    <!-- =====================================================
+     PAGE 5 — TIMELINE
+===================================================== -->
+
+    <section class="page" id="page4">
+
+        <div class="kicker">
+            Chapter Three
+        </div>
+
+        <h2>
+            Us, <span class="highlight">over the years</span> 🕰️
+        </h2>
+
+
+        <div class="timeline">
+
+            <div class="event">
+
+                <div class="event-card">
+
+                    <div class="year">
+                        The Beginning
+                    </div>
+
+                    <h3>
+                        When i sit behind you in 8th
+                    </h3>
+
+                    <p>
+                        The Truth & Dare
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="event">
+
+                <div class="event-card">
+
+                    <div class="year">
+                        The Day you helped me at my lowest
+                    </div>
+
+                    <h3>
+                        I realise that i have found a gem.
+                    </h3>
+
+                    
+
+                </div>
+
+            </div>
+
+
+            <div class="event">
+
+                <div class="event-card">
+
+                    <div class="year">
+                        The Memories
+                    </div>
+
+                    <h3>
+                        A thousand moments ❤️
+                    </h3>
+
+                    <p>
+                        Birthdays, festivals, holidays,
+                        jokes and random nonsense.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="event">
+
+                <div class="event-card">
+
+                    <div class="year">
+                        Today
+                    </div>
+
+                    <h3>
+                        Still us 🫶
+                    </h3>
+
+                    <p>
+                        Older, hopefully wiser,
+                        but still annoying each other.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <button class="btn" onclick="goTo(5)">
+            There's something I want to say ❤️
+        </button>
+
+    </section>
+
+
+    <!-- =====================================================
+     PAGE 6 — REASONS
+===================================================== -->
+
+    <section class="page" id="page5">
+
+        <div class="kicker">
+            Chapter Four
+        </div>
+
+        <h2>
+            Why you're <span class="highlight">special</span> 💖
+        </h2>
+
+        <div class="reasons">
+
+
+            <div class="reason">
+
+                <div class="reason-icon">
+                    😂
+                </div>
+
+                <h3>
+                    You make me laugh
+                </h3>
+
+                <p>
+                    Even when I don't feel like laughing,
+                    somehow you manage it.
+                </p>
+
+            </div>
+
+
+            <div class="reason">
+
+                <div class="reason-icon">
+                    🫶
+                </div>
+
+                <h3>
+                    You're always there
+                </h3>
+
+                <p>
+                    No matter how much we fight,
+                    you're still family.
+                </p>
+
+            </div>
+
+
+            <div class="reason">
+
+                <div class="reason-icon">
+                    🌟
+                </div>
+
+                <h3>
+                    You're you
+                </h3>
+
+                <p>
+                    And honestly,
+                    that's more than enough.
+                </p>
+
+            </div>
+
+
+            <div class="reason">
+
+                <div class="reason-icon">
+                    🤦
+                </div>
+
+                <h3>
+                    You're annoying
+                </h3>
+
+                <p>
+                    A lot.
+                    But unfortunately,
+                    you're my favourite annoying person.
+                </p>
+
+            </div>
+
+
+            <div class="reason">
+
+                <div class="reason-icon">
+                    🏠
+                </div>
+
+                <h3>
+                    You're home
+                </h3>
+
+                <p>
+                    Some people make a place feel like home.
+                    You're one of them.
+                </p>
+
+            </div>
+
+
+            <div class="reason">
+
+                <div class="reason-icon">
+                    ❤️
+                </div>
+
+                <h3>
+                    Because you're my sister
+                </h3>
+
+                <p>
+                    And that is something
+                    I'll always be grateful for.
+                </p>
+
+            </div>
+
+        </div>
+
+        <button class="btn" onclick="goTo(6)">
+            My promises to you 🤝
+        </button>
+
+    </section>
+
+
+    <!-- =====================================================
+     PAGE 7 — PROMISES
+===================================================== -->
+
+    <section class="page" id="page6">
+
+        <div class="kicker">
+            Chapter Five
+        </div>
+
+        <h2>
+            A few <span class="highlight">promises</span> 🤝
+        </h2>
+
+
+        <div class="promise">
+            <span>🛡️</span>
+
+            <p>
+                I'll always have your back,
+                even when you don't ask.
+            </p>
+        </div>
+
+
+        <div class="promise">
+            <span>😂</span>
+
+            <p>
+                I'll continue annoying you
+                for the rest of our lives.
+            </p>
+        </div>
+
+
+        <div class="promise">
+            <span>🍫</span>
+
+            <p>
+                I'll be giving you
+                      choclatesss!!    
+            </p>
+        </div>
+
+
+        <div class="promise">
+            <span>🤐</span>
+
+            <p>
+                Your embarrassing secrets
+                are safe with me.
+                
+            </p>
+        </div>
+
+
+        <div class="promise">
+            <span>❤️</span>
+
+            <p>
+                No matter where life takes us,
+                you'll always have your brother.
+            </p>
+        </div>
+
+
+        <button class="btn" onclick="goTo(7)">
+            Open your letter 💌
+        </button>
+
+    </section>
+
+
+    <!-- =====================================================
+     PAGE 8 — LETTER
+===================================================== -->
+
+    <section class="page" id="page7">
+
+        <div class="kicker">
+            Chapter Six
+        </div>
+
+        <h2>
+            Something from <span class="highlight">my heart</span> 💌
+        </h2>
+
+
+        <div class="letter">
+
+            <p>
+                Dear Sister,
+            </p>
+
+            <p>
+                I don't say this enough, and maybe I don't
+                even know how to say it properly...
+                but I'm really lucky to have you.
+            </p>
+
+            <p>
+                We've had our fights, our arguments,
+                our stupid moments.
+            </p>
+
+            <p>
+                But behind all of that, there is something
+                that will never change — you're my sister,
+                and I'll always care about you.
+            </p>
+
+            <p>
+                I hope life gives you everything you deserve.
+                I hope you keep smiling, keep chasing your dreams,
+                and never forget how special you are.
+            </p>
+
+            <p>
+                And whenever things get difficult,
+                remember that somewhere there is a brother
+                who will always be rooting for you.
+                May i am not your blood brother but you're my 
+                sister by heart not by blood. So keep smiling,enjoying 
+                and  bhkkkk chudaillllll
+            </p>
+
+            <p>
+                Happy Raksha Bandhan.
+            </p>
+
+            <p class="signature">
+                Your annoying brother ❤️
+            </p>
+
+        </div>
+
+
+        <button class="btn" onclick="goTo(8)">
+            One last surprise 🎁
+        </button>
+
+    </section>
+
+
+    <!-- =====================================================
+     PAGE 9 — FINAL SURPRISE
+===================================================== -->
+
+    <section class="page" id="page8">
+
+        <div class="kicker">
+            Final Chapter
+        </div>
+
+        <h2>
+            I saved <span class="highlight">one thing</span> for you...
+        </h2>
+
+        <p class="subtitle">
+            Don't click the gift unless you're ready. 👀
+        </p>
+
+
+        <div class="gift" onclick="openGift()">
+            🎁
+        </div>
+
+
+        <div id="surpriseMessage" class="surprise-message card">
+
+            <h2>
+                You're stuck with me forever. ❤️
+            </h2>
+
+            <p class="subtitle">
+
+                No matter how old we get...
+
+                no matter how far life takes us...
+
+                no matter how many times we fight...
+
+                you'll always be my sister.
+
+            </p>
+
+            <p class="script">
+
+                And yes...
+                I'll annoy you forever.
+
+            </p>
+
+            <br>
+
+            <h2>
+                Happy Raksha Bandhan! 🥹❤️
+            </h2>
+
+            <button class="btn" onclick="celebrate()">
+                Celebrate us 🎉
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+     LIGHTBOX
+===================================================== -->
+
+    <div class="lightbox" id="lightbox">
+
+        <button class="close-lightbox" onclick="closeLightbox()">
+            ×
+        </button>
+
+        <img id="lightboxImage">
+
+    </div>
+
+
+    <script>
+
+        /* =========================================================
+           PAGE NAVIGATION
+        ========================================================= */
+
+        const pages = document.querySelectorAll('.page');
+        const navButtons = document.querySelectorAll('.nav button');
+
+        let currentPage = 0;
+
+        function goTo(index) {
+
+            if (index < 0 || index >= pages.length) {
+                return;
+            }
+
+            pages[currentPage].classList.remove('active');
+            navButtons[currentPage].classList.remove('active');
+
+            currentPage = index;
+
+            pages[currentPage].classList.add('active');
+            navButtons[currentPage].classList.add('active');
+
+        }
+
+
+        /* =========================================================
+           KEYBOARD NAVIGATION
+        ========================================================= */
+
+        document.addEventListener('keydown', (e) => {
+
+            if (e.key === "ArrowRight") {
+                goTo(Math.min(currentPage + 1, pages.length - 1));
+            }
+
+            if (e.key === "ArrowLeft") {
+                goTo(Math.max(currentPage - 1, 0));
+            }
+
+        });
+
+
+        /* =========================================================
+           SECRET PASSWORD
+        ========================================================= */
+
+        /*
+           CHANGE THE SECRET WORD HERE.
+        */
+
+        const SECRET_WORD = "chudail";
+
+        function unlock() {
+
+            const input =
+                document
+                    .getElementById("secretInput")
+                    .value
+                    .trim()
+                    .toLowerCase();
+
+            const result =
+                document.getElementById("secretResult");
+
+            if (input === SECRET_WORD) {
+
+                result.innerHTML =
+                    "Access granted! 😂❤️";
+
+                result.style.color =
+                    "#8cffb2";
+
+                setTimeout(() => {
+                    goTo(2);
+                }, 800);
+
+            } else {
+
+                result.innerHTML =
+                    "Hmm... nice try 😂 Try again.";
+
+                result.style.color =
+                    "#ff8fb1";
+
+            }
+
+        }
+
+
+        /* =========================================================
+           MUSIC
+        ========================================================= */
+
+        const music =
+            document.getElementById("music");
+
+        const musicButton =
+            document.getElementById("musicButton");
+
+
+        function toggleMusic() {
+
+            if (music.paused) {
+
+                music.play()
+                    .then(() => {
+
+                        musicButton.classList.add("playing");
+
+                        musicButton.innerHTML = "⏸️";
+
+                    })
+                    .catch(() => {
+
+                        alert(
+                            "Put your song inside music/rakhi-song.mp3 first!"
+                        );
+
+                    });
+
+            } else {
+
+                music.pause();
+
+                musicButton.classList.remove("playing");
+
+                musicButton.innerHTML = "🎵";
+
+            }
+
+        }
+
+
+        /* =========================================================
+           PHOTO LIGHTBOX
+        ========================================================= */
+
+        const photoImages =
+            document.querySelectorAll(".photo img");
+
+        const lightbox =
+            document.getElementById("lightbox");
+
+        const lightboxImage =
+            document.getElementById("lightboxImage");
+
+
+        photoImages.forEach(img => {
+
+            img.addEventListener("click", () => {
+
+                lightboxImage.src = img.src;
+
+                lightbox.classList.add("show");
+
+            });
+
+        });
+
+
+        function closeLightbox() {
+
+            lightbox.classList.remove("show");
+
+        }
+
+
+        /* =========================================================
+           CLICK OUTSIDE LIGHTBOX
+        ========================================================= */
+
+        lightbox.addEventListener("click", (e) => {
+
+            if (e.target === lightbox) {
+
+                closeLightbox();
+
+            }
+
+        });
+
+
+        /* =========================================================
+           GIFT SURPRISE
+        ========================================================= */
+
+        function openGift() {
+
+            const message =
+                document.getElementById("surpriseMessage");
+
+            message.classList.add("show");
+
+            createConfetti(100);
+
+        }
+
+
+        /* =========================================================
+           CONFETTI
+        ========================================================= */
+
+        function createConfetti(amount) {
+
+            const symbols = [
+                "❤️",
+                "💜",
+                "💖",
+                "✨",
+                "🌸",
+                "🎉",
+                "⭐"
+            ];
+
+            for (let i = 0; i < amount; i++) {
+
+                const confetti =
+                    document.createElement("div");
+
+                confetti.className =
+                    "confetti";
+
+                confetti.innerHTML =
+                    symbols[
+                    Math.floor(
+                        Math.random() * symbols.length
+                    )
+                    ];
+
+                confetti.style.left =
+                    Math.random() * 100 + "vw";
+
+                confetti.style.fontSize =
+                    (10 + Math.random() * 18) + "px";
+
+                confetti.style.animationDuration =
+                    (2 + Math.random() * 4) + "s";
+
+                document.body.appendChild(confetti);
+
+                setTimeout(() => {
+                    confetti.remove();
+                }, 7000);
+
+            }
+
+        }
+
+
+        /* =========================================================
+           BIG CELEBRATION
+        ========================================================= */
+
+        function celebrate() {
+
+            createConfetti(250);
+
+            for (let i = 0; i < 50; i++) {
+
+                setTimeout(() => {
+                    createHeart();
+                }, i * 70);
+
+            }
+
+        }
+
+
+        /* =========================================================
+           FLOATING HEARTS
+        ========================================================= */
+
+        function createHeart() {
+
+            const heart =
+                document.createElement("div");
+
+            heart.className =
+                "heart";
+
+            heart.innerHTML =
+                ["❤️", "💖", "💕", "💜", "✨"]
+                [
+                Math.floor(
+                    Math.random() * 5
+                )
+                ];
+
+            heart.style.left =
+                Math.random() * 100 + "vw";
+
+            heart.style.fontSize =
+                (12 + Math.random() * 25) + "px";
+
+            heart.style.animationDuration =
+                (5 + Math.random() * 7) + "s";
+
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 12000);
+
+        }
+
+
+        /* =========================================================
+           CONTINUOUS HEARTS
+        ========================================================= */
+
+        setInterval(() => {
+
+            if (Math.random() > .35) {
+
+                createHeart();
+
+            }
+
+        }, 1000);
+
+
+        /* =========================================================
+           TYPEWRITER EFFECT
+        ========================================================= */
+
+        const typeElement =
+            document.getElementById("typeText");
+
+        const originalText =
+            typeElement.innerText;
+
+        typeElement.innerText = "";
+
+        let typeIndex = 0;
+
+        function typeWriter() {
+
+            if (typeIndex < originalText.length) {
+
+                typeElement.innerText +=
+                    originalText.charAt(typeIndex);
+
+                typeIndex++;
+
+                setTimeout(typeWriter, 25);
+
+            }
+
+        }
+
+        setTimeout(typeWriter, 900);
+
+
+        /* =========================================================
+           MOUSE GLOW EFFECT
+        ========================================================= */
+
+        document.addEventListener("mousemove", (e) => {
+
+            document.body.style.background =
+                `
+        radial-gradient(
+            circle at ${e.clientX}px ${e.clientY}px,
+            rgba(255,92,138,.08),
+            transparent 350px
+        ),
+        #160b27
+        `;
+
+        });
+
+
+        /* =========================================================
+           TOUCH SWIPE FOR MOBILE
+        ========================================================= */
+
+        let touchStartX = 0;
+
+        document.addEventListener("touchstart", (e) => {
+
+            touchStartX =
+                e.changedTouches[0].screenX;
+
+        });
+
+
+        document.addEventListener("touchend", (e) => {
+
+            const touchEndX =
+                e.changedTouches[0].screenX;
+
+            const difference =
+                touchStartX - touchEndX;
+
+            if (Math.abs(difference) > 70) {
+
+                if (difference > 0) {
+
+                    goTo(
+                        Math.min(
+                            currentPage + 1,
+                            pages.length - 1
+                        )
+                    );
+
+                } else {
+
+                    goTo(
+                        Math.max(
+                            currentPage - 1,
+                            0
+                        )
+                    );
+
+                }
+
+            }
+
+        });
+
+
+        /* =========================================================
+           WELCOME EFFECT
+        ========================================================= */
+
+        window.addEventListener("load", () => {
+
+            setTimeout(() => {
+
+                createConfetti(25);
+
+            }, 1000);
+
+        });
+
+    </script>
+
+</body>
+
+</html>
